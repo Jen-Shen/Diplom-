@@ -1,0 +1,16 @@
+{% extends 'gym_tacker/layout.html' %}
+
+{% block titlet %}
+{{ workout.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="tg-details">
+        <h1>{{ workout.name }}</h1>
+        <p>{{ workout.date }}</p>
+        <p>{{ workout.description }}</p>
+        <a href="{% url 'download_training' pk=workout.pk %}" class="btn btn-info">Скачать</a>
+        <a href="{% url 'delete_training' workout.id %}" class="btn btn-danger">Удалить</a>
+
+    </div>
+{% endblock %}

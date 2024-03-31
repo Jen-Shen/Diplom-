@@ -1,0 +1,23 @@
+{% extends 'gym_tacker/layout.html' %}
+{% load embed_video_tags %}
+
+{% block titlet %}
+{{ gym.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="gym-details">
+        <h1>{{ gym.title }}</h1>
+        <p>{{ gym.date }}</p>
+        <p>{{ gym.info }}</p>
+        <img src="{{ gym.picture.url }}" alt="{{ gym.title }}">
+        <a href="{% url 'gym-delete' gym.id %}" class="btn btn-danger">Удалить</a>
+        <div class="video-list">
+            {% for item in videos %}
+                <div class="video-item">
+                    {% video item.url '425x240' %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

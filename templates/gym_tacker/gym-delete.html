@@ -1,0 +1,17 @@
+{% extends 'gym_tacker/layout.html' %}
+
+{% block titlet%}
+Удаление статьи
+{% endblock %}
+
+{% block content%}
+    <div class="gym-delete">
+        <h1>Удаление записи</h1>
+        <form method="post">
+            {% csrf_token %}
+
+            <button class="btn btn-success" type="submit">Удалить</button>
+        </form>
+    </div>
+
+{% endblock %}

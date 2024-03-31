@@ -1,0 +1,32 @@
+{% extends 'gym_tacker/layout.html' %}
+
+{% block title %}
+Личный кабинет
+{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Личный кабинет</h1>
+
+    <div class="user-info">
+        <h2>Информация о пользователе</h2>
+        <p><strong>Имя пользователя:</strong> {{ user.username }}</p>
+        <p><strong>Имя:</strong> {{ user.first_name }}</p>
+        <p><strong>Фамилия:</strong> {{ user.last_name }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+
+    <div class="training-info">
+        <h2>Информация для тренировки</h2>
+        {% if show_message %}  <!-- Проверяем флаг show_message -->
+        <p style="color: red;">Заполните анкету перед продолжением</p>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

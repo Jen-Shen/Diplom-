@@ -1,0 +1,49 @@
+{% extends 'gym_tacker/layout.html' %}
+
+{% block title %}
+Программа тренировок
+{% endblock %}
+
+{% block content %}
+<div class="training-container">
+  <h1>Список тренировок</h1>
+  <a href="{% url 'add_for_weight_loss' %}" class="btn btn-primary mb-3">Добавить для похудения</a>
+  <a href="{% url 'add_for_muscle_gain' %}" class="btn btn-primary mb-3">Добавить для набора</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Номер</th>
+        <th>Название тренировки</th>
+        <th>Дата</th>
+        <th></th> <!-- Пустая ячейка для кнопки "Подробнее" -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for form in forms %}
+        <tr>
+          <td>{{ form.number }}</td>
+          <td>{{ form.name }}</td>
+          <td>{{ form.date }}</td>
+          <td>
+            <a href="{% url 'detail_training' form.id %}" class="btn btn-warning">Подробнее</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">Нет доступных тренировок.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.btn');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      button.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${button.textContent}`;
+      button.disabled = true;
+    });
+  });
+</script>
+{% endblock %}

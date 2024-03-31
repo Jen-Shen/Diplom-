@@ -1,0 +1,282 @@
+body {
+    background: #e19d37;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    background: #181818;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 5px solid #4d4d4d;
+}
+
+.navigation img {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.navigation .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.navigation ul li {
+    margin-right: 20px;
+}
+
+.navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+    color: orange;
+}
+
+.center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#image-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image-upload, #submit-button {
+    margin-top: 10px;
+}
+
+#loading-spinner {
+    margin-top: 10px;
+}
+
+#image-preview img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result .elem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1500px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.result .elem p {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.result .elem a {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+}
+
+.result .elem h3 {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.result .elem .btn {
+  flex-shrink: 0;
+}
+
+.result .elem img {
+  flex-shrink: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.gym-delete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+
+
+.gym-details {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 500px;
+}
+
+.gym-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.gym-details p {
+    margin-bottom: 5px;
+    text-align: center;
+
+}
+
+.gym-details img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gym-details .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 10px;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+}
+
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-item {
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  max-width: 400px;
+  margin: 20px auto 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.user-info {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.user-info h1 {
+    margin-bottom: 10px;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+.training-info {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.training-info h2 {
+    margin-bottom: 10px;
+}
+
+.training-info form {
+    margin-top: 10px;
+}
+
+.training-info button {
+    margin-top: 10px;
+}
+
+
+.tg-details {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 500px;
+}
+
+.tg-details h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tg-details form {
+    margin-top: 10px;
+}
+
+.tg-details button {
+    margin-top: 10px;
+}
+
+.home h1{
+    text-align: center;
+}
+
+.home .btn{
+    text-align: center;
+}
+
+.training-container {
+  text-align: center;
+}
+
+.training-container .btn {
+  display: inline-block;
+}
+

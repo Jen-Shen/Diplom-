@@ -1,0 +1,25 @@
+{% extends 'gym_tacker/layout.html'%}
+
+{% block title %}
+Просмотр результатов
+{% endblock %}
+
+{% block content %}
+    <div class="result">
+        <h1>Результаты</h1>
+        {% if gym %}
+            {% for el in gym %}
+                <div class="elem">
+                    <img src="{{ el.picture.url }}" alt="{{ el.title }}">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.info }}</p>
+                    <p>{{ el.date }}</p>
+                    <a href="{% url 'gym-detail' el.id %}" class="btn btn-warning">Подробнее</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет результатов</p>
+        {% endif %}
+    </div>
+{% endblock %}
+

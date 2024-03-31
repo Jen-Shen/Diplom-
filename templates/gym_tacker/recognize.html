@@ -1,0 +1,45 @@
+{% extends 'gym_tacker/layout.html' %}
+
+{% block title %}
+Распознавание
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <div class="center-column">
+            <h1>Распознавание спортивных тренажёров</h1>
+            <div id="image-preview"></div>
+            <form id="image-form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                    <input type="file" id="image-upload" name="{{ form.picture.name }}" onchange="displayImage(event)">
+
+                    <button id="submit-button" class="btn btn-success" type="submit">Распознать </button>
+                    <div id="loading-spinner" class="spinner-border text-primary" role="status" style="display: none;"></div>
+
+                <span id="error-message">{{ error }}</span>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function displayImage(event) {
+            var image = document.getElementById('image-preview');
+            image.innerHTML = '';
+
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.marginTop = '10px';
+                image.appendChild(img);
+            }
+            reader.readAsDataURL(file);
+        }
+
+        document.getElementById('image-form').addEventListener('submit', function() {
+            document.getElementById('submit-button').disabled = true;
+            document.getElementById('loading-spinner').style.display = 'inline-block';
+        });
+    </script>
+{% endblock %}

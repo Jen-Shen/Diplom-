@@ -1,0 +1,116 @@
+{% extends 'gym_tacker/layout.html'%}
+
+{% block titlet%}
+Страница регистрации
+{% endblock %}
+
+{% block content%}
+<form class="login-form" method="POST">
+{% csrf_token %}
+<div class="row">
+<div class="col-md-12">
+{% if form.errors %}
+{% for field in form %}
+{% for error in field.errors %}
+<div class="alert alert-danger">
+<strong>{{ error|escape }}</strong>
+<strong>{{ field|escape }}</strong>
+</div>
+{% endfor %}
+{% endfor %}
+{% for error in form.non_field_errors %}
+<div class="alert alert-danger">
+<strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+<div class="col-md-6">
+<div class="form-group position-relative">
+<label>Имя <span class="text-danger">*</span></label>
+{{form.first_name}}
+</div>
+{% if form.first_name.errors %}
+{% for error in form.first_name.errors %}
+<div class="alert alert-danger">
+<strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+<div class="col-md-6">
+<div class="form-group position-relative">
+<label>Фамилия <span class="text-danger">*</span></label>
+{{form.last_name}}
+</div>
+{% if form.last_name.errors %}
+{% for error in form.last_name.errors %}
+<div class="alert alert-danger">
+<strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+<div class="col-md-12">
+<div class="form-group position-relative">
+<label>Почтовый адрес <span class="text-danger">*</span></label>
+{{form.email}}
+</div>
+{% if form.email.errors %}
+{% for error in form.email.errors %}
+<div class="alert alert-danger">
+<strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+<div class="col-md-12">
+<div class="form-group position-relative">
+<label>Логин <span class="text-danger">*</span></label>
+{{form.username}}
+</div>
+{% if form.username.errors %}
+{% for error in form.username.errors %}
+<div class="alert alert-danger">
+<strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+<div class="col-md-12">
+<div class="form-group position-relative">
+<label>Пароль <span class="text-danger">*</span></label>
+{{form.password1}}
+</div>
+{% if form.password1.errors %}
+{% for error in form.password1.errors %}
+<div class="alert alert-danger">
+<strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+<div class="col-md-12">
+<div class="form-group position-relative">
+<label>Подтверждение пароля <span class="text-danger">*</span></label>
+{{form.password2}}
+</div>
+{% if form.password2.errors %}
+{% for error in form.password2.errors %}
+<div class="alert alert-danger">
+<strong>{{ error|escape }}</strong>
+</div>
+{% endfor %}
+{% endif %}
+
+
+<div class="col-md-12">
+<button class="btn btn-primary w-100" type="submit" >Регистрация</button>
+</div>
+<div class="mx-auto">
+<p class="mb-0 mt-3"><small class="text-dark mr-2">Уже есть аккаунт?</small> <a href="{% url 'login' %}" class="text-dark font-weight-bold">Вход</a></p>
+</div>
+</div>
+</div>
+</form>
+{% endblock %}
